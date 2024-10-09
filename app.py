@@ -9,8 +9,8 @@ st.title('Price Forecasting with Variance')
 
 # Sample data (replace with actual data)
 data = {
-    'Month': ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
-    'Actual_Price': [774.4, 758.7, 784.95, 743.4, 703.55, 705.95]
+    'Month': ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    'Actual_Price': [774.4, 758.7, 784.95, 743.4, 703.55, 705.95, 745.15, 736.8, 708.55, 702.75, 718.95, 727.75]
 }
 
 # Convert to DataFrame
@@ -23,7 +23,7 @@ df['Previous_Month_Price'] = df['Actual_Price'].shift(1).fillna(df['Actual_Price
 
 # Input: Number of months to forecast
 st.sidebar.header('Forecast Settings')
-num_months = st.sidebar.slider('Select number of months to forecast:', 1, 6, 6)
+num_months = st.sidebar.slider('Select number of months to forecast:', 1, 12, 6)
 
 # Prepare data for the model
 X = df[['Month_Number', 'Month_of_Year', 'Previous_Month_Price']]
