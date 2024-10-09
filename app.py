@@ -23,7 +23,7 @@ df['Previous_Month_Price'] = df['Actual_Price'].shift(1).fillna(df['Actual_Price
 
 # Input: Number of months to forecast
 st.sidebar.header('Forecast Settings')
-num_months = st.sidebar.slider('Select number of months to forecast:', 1, 12, 6)
+num_months = st.sidebar.slider('Select number of months to forecast:', 1, 6, 6)
 
 # Prepare data for the model
 X = df[['Month_Number', 'Month_of_Year', 'Previous_Month_Price']]
